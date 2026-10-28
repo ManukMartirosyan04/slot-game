@@ -1,0 +1,20 @@
+---
+description: Route hard decisions to senior-architect and keep ordinary work on the parent agent
+alwaysApply: true
+---
+
+# Model routing
+
+The parent agent handles the request itself. Delegate only when the task is one of these:
+
+- A system architecture or design decision
+- A complex React / PixiJS integration problem
+- A performance bottleneck or concurrency issue
+- Difficult debugging that needs root-cause analysis
+- A major refactoring decision
+
+Delegate that part with a single `senior-architect` subagent (`/senior-architect`). Apply its recommendation yourself.
+
+Do not delegate ordinary questions, routine edits, simple implementation, formatting, or git. Do not call `senior-architect` to answer a question you can answer directly. Do not call a second expensive model for the same decision.
+
+`senior-architect` is read-only and returns a decision. It does not edit the project.
