@@ -9,7 +9,7 @@
 
 ## Next
 
-- [ ] Agree and finalize `docs/GAME_RULES.md` before payout code
+- [x] Agree and finalize `docs/GAME_RULES.md` before payout code
 - [ ] Core engine: symbols, reel strips, RNG, evaluator, payouts, tests
 - [ ] Domain store + state machine + `LocalSpinService`
 - [ ] Imperative Pixi `GameView` with placeholder symbols

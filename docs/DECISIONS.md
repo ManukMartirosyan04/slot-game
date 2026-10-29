@@ -35,3 +35,21 @@ Risk: Art quality dominates perceived polish. Build with placeholders first, rep
 Decision: Public deploy on Vercel with GitHub Actions CI later.
 
 Why: Simple static frontend hosting and HTTPS for a portfolio URL.
+
+## 2026-10-29 — Betting math split
+
+Decision: UI exposes total bet only. Engine pays line wins as `multiplier × betPerLine` where `betPerLine = totalBet / 10`. Scatter pays `multiplier × totalBet`.
+
+Why: Pure total-bet line multipliers with 10 simultaneous lines make the draft paytable structurally too generous and harder to calibrate. Bet-per-line math keeps commercial-style accounting while the HUD stays simple.
+
+## 2026-10-29 — Wild pays the best eligible candidate
+
+Decision: Reject “first non-wild only”. Each line evaluates the leading wild run and every ordinary-symbol run with wild substitution, then keeps the maximum payout.
+
+Why: `W W W J Q` can pay more as 3× wild than as 4× J. Taking only the first non-wild underpays the correct combination.
+
+## 2026-10-29 — Scatter counting with strip spacing
+
+Decision: Count visible scatter instances. Constrain strips so any 3 consecutive cells contain at most one scatter, capping visible scatters at one per reel and five total. MVP scatter is credit-only; Free Spins wait for phase 2.
+
+Why: Removes ambiguity between symbol-count and reel-count, keeps the 3/4/5 paytable closed, and avoids implying a Free Spins feature that is out of MVP scope.
