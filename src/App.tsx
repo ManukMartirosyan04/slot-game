@@ -1,4 +1,3 @@
-
 import { Application, extend } from '@pixi/react';
 import { Graphics } from 'pixi.js';
 import { useCallback } from 'react';
@@ -17,8 +16,7 @@ export default function App() {
     <main>
       <h1>Slot Game</h1>
 
-      <Application width={500} height={350}
-        background={0x101020}>
+      <Application width={500} height={350} background={0x101020}>
         <pixiGraphics draw={draw} />
       </Application>
     </main>
